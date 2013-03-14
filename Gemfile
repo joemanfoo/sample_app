@@ -9,6 +9,7 @@ gem 'mongoid', '~> 3.1.0'
 
 group :development, :test do
 	gem 'rspec-rails', '2.9.0'
+	gem 'guard-rspec', '0.5.5'
 end
 
 
@@ -27,7 +28,15 @@ end
 gem 'jquery-rails'
 
 group :test do
+	gem 'rspec-rails', '2.9.0'
 	gem 'capybara', '1.1.2'
+	gem 'rb-fchange', '0.0.5'
+	gem 'rb-notifu', '0.0.4'
+	gem 'win32console', '1.3.0'
+	gem 'wdm', '~> 0.1'
+	gem 'guard-spork'
+	gem 'spork', '0.9.0'
+	gem 'childprocess', '~> 0.3.6'
 end
 
 # To use ActiveModel has_secure_password
