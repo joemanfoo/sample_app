@@ -3,7 +3,7 @@
 
 notification :notifu, :time => 20, :xp => true
 
-guard 'spork', :wait => 60, :cucumber_env => { 'RAILS_ENV' => 'test' }, :rspec_env => { 'RAILS_ENV' => 'test' } do
+guard 'spork', :wait => 30, :cucumber_env => { 'RAILS_ENV' => 'test' }, :rspec_env => { 'RAILS_ENV' => 'test' } do
 
   watch('config/application.rb')
   watch('config/environment.rb')
@@ -12,7 +12,6 @@ guard 'spork', :wait => 60, :cucumber_env => { 'RAILS_ENV' => 'test' }, :rspec_e
   watch('Gemfile')
   watch('Gemfile.lock')
   watch('spec/spec_helper.rb')
-  #watch('test/test_helper.rb')
   watch('spec/support/')
 end
 

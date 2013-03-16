@@ -2,14 +2,12 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.8'
 gem 'bootstrap-sass', '2.0.0'
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'mongoid', '~> 3.1.0'
 
 group :development, :test do
 	gem 'rspec-rails', '2.9.0'
-	gem 'guard-rspec', '0.5.5'
+	#gem 'guard-rspec', '0.5.5'
 end
 
 
@@ -34,13 +32,14 @@ group :test do
 	gem 'rb-notifu', '0.0.4'
 	gem 'win32console', '1.3.0'
 	gem 'wdm', '~> 0.1'
-	gem 'guard-spork'
+	#gem 'guard-spork'
 	gem 'spork', '0.9.0'
 	gem 'childprocess', '~> 0.3.6'
+	gem 'database_cleaner'
 end
 
 # To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'bcrypt-ruby', '~> 3.0.1'
 
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
