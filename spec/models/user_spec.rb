@@ -11,6 +11,7 @@ describe User do
   it { should respond_to(:password_digest) }
   it { should respond_to(:password) }               # virtual attr
   it { should respond_to(:password_confirmation) }  # virtual attr
+  it { should respond_to(:remember_token) }
 
   # methods on user
   it { should respond_to(:authenticate) }
@@ -106,6 +107,12 @@ describe User do
   	describe "with a password that's too short" do
   	  before { @user.password = @user.password_confirmation = 'a' * 5 }
   	  it { should be_invalid }
+  	end
+
+  	# remember token #
+  	describe "remember token" do
+  	  before { @user.save }
+  	  its(:remember_token) { should_not be_blank }
   	end
 
   end

@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
-#ruby "1.9.3"
+ruby "1.9.3"
 
 gem 'rails', '3.2.8'
-gem 'bootstrap-sass', '2.0.0'
+gem 'bootstrap-sass'
 
 gem 'mongoid', '~> 3.1.0'
 
@@ -38,6 +38,7 @@ group :test do
 	gem 'childprocess', '~> 0.3.6'
 	gem 'database_cleaner'
 	gem 'factory_girl_rails', '1.4.0'
+	gem 'cucumber-rails'
 end
 
 # To use ActiveModel has_secure_password
