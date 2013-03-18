@@ -74,7 +74,7 @@ p {
 	line-height: 1;
 
 	&:hover { /* & -> is the '#logo' */
-		color: $grayMediumLight;
+		color: $gray;
 		text-decoration: none;
 	}
 }
