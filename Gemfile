@@ -11,11 +11,11 @@ gem 'will_paginate_mongoid'
 gem 'bootstrap-will_paginate'
 
 gem 'mongoid', '~> 3.1.0'
+gem 'faker'
 
 group :development, :test do
 	gem 'rspec-rails', '2.9.0'
 	#gem 'guard-rspec', '0.5.5'
-	gem 'faker'
 end
 
 
