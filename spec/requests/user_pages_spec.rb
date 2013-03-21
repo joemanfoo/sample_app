@@ -44,6 +44,11 @@ describe "User pages" do
         end
 
         it { should_not have_link('delete', href: user_path(admin)) }
+
+        describe "should not be able to delete their user account" do
+          before { delete user_path(admin) }
+          specify { response.should redirect_to(users_path) }
+        end
       end
     end
   end
@@ -87,7 +92,7 @@ describe "User pages" do
   	  	fill_in "Name",          with: "Example User"
   	  	fill_in "Email",         with: "user@example.com"
   	  	fill_in "Password",      with: "foobar"
-  	  	fill_in "Confirmation",   with: "foobar"
+  	  	fill_in "Confirm Password",   with: "foobar"
   	  end
 
   	  it "should create a user" do
