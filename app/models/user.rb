@@ -10,6 +10,7 @@ class User
 
   field :name, type: String
   field :email, type: String
+  field :admin, type: Boolean
   field :remember_token, type: String
   field :password_digest, type: String
 
@@ -30,6 +31,10 @@ class User
   
   has_secure_password
 
+  def toggle!(field)
+    send "#{field}=", !self.send("#{field}?")
+    save :validation => false
+  end
   private
 
     def create_remember_token

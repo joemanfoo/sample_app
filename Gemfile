@@ -1,14 +1,21 @@
 source 'https://rubygems.org'
-ruby "1.9.3"
+#ruby "1.9.3"
 
 gem 'rails', '3.2.8'
 gem 'bootstrap-sass'
+#gem 'will_paginate' # at 3.1 will have mogoid support
+#  untill then...
+gem 'will_paginate_mongoid'
+
+
+gem 'bootstrap-will_paginate'
 
 gem 'mongoid', '~> 3.1.0'
 
 group :development, :test do
 	gem 'rspec-rails', '2.9.0'
 	#gem 'guard-rspec', '0.5.5'
+	gem 'faker'
 end
 
 
