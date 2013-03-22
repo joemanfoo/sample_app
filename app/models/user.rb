@@ -14,6 +14,8 @@ class User
   field :remember_token, type: String
   field :password_digest, type: String
 
+  has_many :microposts, dependent: :delete, autosave: true
+
 
   validates :name, presence: true, length: { maximum: 50 }
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
@@ -25,7 +27,6 @@ class User
   validates :password, presence: true, length: { minimum: 6 }
   validates :password_confirmation, presence: true
 
-
   index( { email: 1 }, { unique: true, name: "email_index" } )
   index( { remember_token: 1})
   
@@ -35,6 +36,12 @@ class User
     send "#{field}=", !self.send("#{field}?")
     save :validation => false
   end
+
+  def feed
+    # This is preliminary
+    Micropost.where(user_id: id)
+  end
+
   private
 
     def create_remember_token
