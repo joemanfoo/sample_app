@@ -1,0 +1,6 @@
+<%= form_tag(relationships_path, method: "delete", remote: true) do %>
+	<div>
+		<input type="hidden" name="follow_id" value="<%= @user.id %>" />
+	</div>
+	<%= submit_tag "Unfollow", class: "btn btn-large" %>
+<% end %>

@@ -12,6 +12,8 @@ describe User do
   it { should respond_to(:password) }               # virtual attr
   it { should respond_to(:password_confirmation) }  # virtual attr
   it { should respond_to(:remember_token) }
+  it { should respond_to(:following) }
+  it { should respond_to(:followers) }
 
   # methods on user
   it { should respond_to(:admin) }
@@ -156,4 +158,5 @@ describe User do
   	end
 
   end
+
 end

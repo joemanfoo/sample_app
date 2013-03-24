@@ -14,4 +14,11 @@ class Micropost
   validates :content, presence: true, length: { maximum: 140 }
 
   index( { user_id: 1, created_ad: 1 } )
+
+  def self.from_users_followed_by(user)
+  	ids = user.followed
+  	ids << user.id
+  	Micropost.in(user_id: ids)
+  end
+
 end

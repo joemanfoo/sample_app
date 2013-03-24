@@ -1,0 +1,4 @@
+<%= form_tag(relationships_path, remote: true) do %>
+	<div><input type="hidden" name="follow_id" value="<%= @user.id %>" /></div>
+	<%= submit_tag "Follow", class: "btn btn-large but-primary" %>
+<% end %>
